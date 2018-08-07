@@ -2,7 +2,11 @@
 const path = require('path')
 // 引入生成html的插件
 const HTMLPlugin = require('html-webpack-plugin')
-module.exports = {
+// 判断环境是否属于开发环境
+// const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.NODE_ENV === 'development' 
+
+const config = {
   // 打包时入口文件
   entry: {
     app: path.join(__dirname, '../client/app.js'),
@@ -43,3 +47,25 @@ module.exports = {
     })
   ]
 }
+// 如果是开发环境
+if(isDev){
+  // webpack 在开发环境下的配置
+  config.devServer = {
+  // 访问地址 任何方式都可以访问
+  host: '0.0.0.0',
+  // 访问端口
+  port: 8888,
+  contentBase: path.join(__dirname,'../dist'),
+  // 启动热更新
+  host: true,
+  open: true ,
+  // 抛出异常
+  overlay: {
+    // 只显示错误信息
+    errors: true
+  }
+  }
+}
+
+// 导出
+module.exports = config
