@@ -1,4 +1,4 @@
-// 引入绝对路径
+// 引入路径模块
 const path = require('path')
 // 引入生成html的插件
 const HTMLPlugin = require('html-webpack-plugin')
@@ -11,6 +11,7 @@ module.exports = {
   output: {
     // []里面可以放置变量  [hash]打包后给文件加一个hash值
     filename: '[name].[hash].js',
+    // __dirname表示当前运行环境绝对路径
     path: path.join(__dirname,'../dist'),
     // 区分静态资源
     publicPath: 'public',
@@ -36,7 +37,7 @@ module.exports = {
     ]
   },
   plugins: [
-    // 生成html页面
+    // 生成html页面,挂载在
     new HTMLPlugin({
       template: path.join(__dirname, '../client/template.html')
     })
