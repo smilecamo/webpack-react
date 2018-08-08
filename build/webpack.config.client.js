@@ -4,13 +4,17 @@ const path = require('path')
 const HTMLPlugin = require('html-webpack-plugin')
 // 判断环境是否属于开发环境
 // const isDev = process.env.NODE_ENV === 'development'
-const isDev = process.env.NODE_ENV === 'development' 
+const isDev = process.env.NODE_ENV='development' 
 
 const config = {
   // 打包时入口文件
   entry: {
     app: path.join(__dirname, '../client/app.js'),
   },
+  // devServer: {
+  //   contentBase: './dist',
+  //   open: true
+  // },
   // 出口文件
   output: {
     // []里面可以放置变量  [hash]打包后给文件加一个hash值
@@ -33,7 +37,7 @@ const config = {
       {
         test: /.js$/,
         loader: "babel-loader",
-        // 排除不需要二次编译
+        // 排除  不需要二次编译
         exclude: [
           path.join(__dirname, '../node_modules')
         ]
@@ -53,12 +57,12 @@ if(isDev){
   config.devServer = {
   // 访问地址 任何方式都可以访问
   host: '0.0.0.0',
-  // 访问端口
-  port: 8888,
+  // // 访问端口
+  port: 8080,
   contentBase: path.join(__dirname,'../dist'),
   // 启动热更新
-  host: true,
-  open: true ,
+  // host: true,
+  open: true,
   // 抛出异常
   overlay: {
     // 只显示错误信息
