@@ -1,10 +1,10 @@
 // 基于node的web开发框架
-const express = require('express')
+const express = require('express');
 // react-dom 下的服务端渲染模块
-const ReactSSR = require('react-dom/server')
+const ReactSSR = require('react-dom/server');
 // Node.js内置的文件系统模块
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 // 使用express
 const app = express()
 const isDev = process.env.NODE_ENV === 'development'
@@ -28,6 +28,6 @@ if(!isDev){
   devStatic(app)
 }
 // 开启端口
-app.listen(333,function () {
-  console.log('333')
+app.listen(3333,function () {
+  console.log('3333')
 })
