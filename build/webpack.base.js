@@ -6,11 +6,9 @@ module.exports = {
       // 区分静态资源 后面必须加斜杆/
       publicPath: '/public/',
     },
-    // resolve: {
-    //   alias: {
-    //     Views: path.resolve(__dirname,'client/views/'),
-    //   }
-    // },
+    resolve: {
+      extensions: ['.js', '.jsx']
+    },
     module: {
       rules: [{
           // 代码检查工具

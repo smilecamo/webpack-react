@@ -1,9 +1,17 @@
 import React from 'react';
+import Routes from '../router/router'
 
-export default function App() {
-  return (
-    <div>
-      { '56565' }
-    </div>
-  )
+export default class App extends React.Component {
+  componentDidMount() {
+    // do
+  }
+
+  render() {
+    return (
+      <div>
+        {'ssss'}
+        <Routes />
+      </div>
+    )
+  }
 }

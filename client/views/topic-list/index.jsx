@@ -4,7 +4,7 @@ export default class TopicList extends React.Component {
   componentDidMount() {
     // do someing here
   }
-  
+
   render() {
     return (
       <div>

@@ -43,7 +43,7 @@ if(isDev){
   }
   config.devServer = {
   // 访问地址 任何方式都可以访问
-  host: '0.0.0.0',
+  host: 'localhost',
   // // 访问端口
   port: 8080,
   contentBase: path.join(__dirname,'../dist'),
